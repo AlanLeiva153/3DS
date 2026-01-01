@@ -56,11 +56,10 @@
             clear: both;
         }
         .cube {
-            width: 50px;
-            height: 50px;
-            margin: 5px;
+            width: 8px;
+            height: 8px;
+            margin: 0px;
             background: white;
-            border: 2px solid #999;
             float: left;
             cursor: pointer;
         }
@@ -112,7 +111,7 @@
         </div>
     </div>
     
-    <p>Funciona con toque en móviles antiguos y clic en navegadores viejos.</p>
+    <p align="center">1.0.0</p>
 
     <script type="text/javascript">
         // Función para validar y limitar valores entre 0-255
@@ -124,7 +123,7 @@
             return n;
         }
         
-        // Actualiza el color del previsualizador y los campos
+        // Actualiza el color del previsualizador
         function actualizarPreview() {
             var r = validar(document.getElementById('r').value);
             var g = validar(document.getElementById('g').value);
@@ -149,10 +148,14 @@
             cubo.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
         }
         
-        // Actualiza el preview cada vez que se escribe en los campos
-        document.getElementById('r').onkeyup = actualizarPreview;
-        document.getElementById('g').onkeyup = actualizarPreview;
-        document.getElementById('b').onkeyup = actualizarPreview;
+        // Eventos mejorados para actualización casi instantánea del preview
+        var campos = ['r', 'g', 'b'];
+        for (var i = 0; i < campos.length; i++) {
+            var campo = document.getElementById(campos[i]);
+            campo.onkeyup = actualizarPreview;   // Al soltar tecla
+            campo.onchange = actualizarPreview;  // Al salir del campo o cambiar valor
+            campo.oninput = actualizarPreview;   // En cada cambio (más fluido)
+        }
         
         // Inicializa el preview al cargar la página
         actualizarPreview();

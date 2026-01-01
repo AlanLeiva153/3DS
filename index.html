@@ -4,19 +4,82 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=320">
-   
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-   
-    <title>B-3DS</title>
+    <title>Cuadrícula Interactiva Retro</title>
+    
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #f0f0f0;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        #grid {
+            width: 240px;        /* 4 cubos x 50px + márgenes */
+            height: 240px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            background: #fff;
+        }
+        .row {
+            clear: both;
+        }
+        .cube {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background: white;
+            border: 2px solid #999;
+            float: left;
+            cursor: pointer;     /* Muestra mano en navegadores que lo soporten */
+        }
+        .cube.clicked {
+            background: black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a mi sitio</h1>
-    <p>Este es un ejemplo simple de HTML 4.01 Strict.</p>
+    <h1>Toca o haz clic en los cuadrados</h1>
+    <p>¡Se pondrán negros!</p>
+    
+    <div id="grid">
+        <!-- Fila 1 -->
+        <div class="row">
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+        </div>
+        <!-- Fila 2 -->
+        <div class="row">
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+        </div>
+        <!-- Fila 3 -->
+        <div class="row">
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+        </div>
+        <!-- Fila 4 -->
+        <div class="row">
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+            <div class="cube" onclick="this.className='cube clicked'"></div>
+        </div>
+    </div>
+    
+    <p style="margin-top: 30px; font-size: small;">
+        Funciona con toque en móviles antiguos y clic en navegadores viejos.
+    </p>
 </body>
-
 </html>
-
-
-
-

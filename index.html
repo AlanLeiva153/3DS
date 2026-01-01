@@ -6,23 +6,49 @@
     <meta name="viewport" content="width=320">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Cuadrícula Interactiva Retro</title>
+    <title>Cuadrícula de Colores Retro</title>
     
     <style type="text/css">
         body {
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             background: #f0f0f0;
-            margin: 20px;
+            margin: 15px;
+            font-size: 14px;
         }
         h1 {
             font-size: 18px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        #controles {
+            margin: 20px auto;
+            padding: 10px;
+            background: #ddd;
+            border: 2px solid #333;
+            width: 280px;
+        }
+        label {
+            display: inline-block;
+            width: 30px;
+            text-align: left;
+        }
+        input[type="text"] {
+            width: 50px;
+            text-align: center;
+        }
+        #preview {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #333;
+            background: white;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 15px;
         }
         #grid {
-            width: 240px;        /* 4 cubos x 50px + márgenes */
+            width: 240px;
             height: 240px;
-            margin: 0 auto;
+            margin: 20px auto;
             border: 3px solid #333;
             background: #fff;
         }
@@ -36,50 +62,100 @@
             background: white;
             border: 2px solid #999;
             float: left;
-            cursor: pointer;     /* Muestra mano en navegadores que lo soporten */
-        }
-        .cube.clicked {
-            background: black;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Toca o haz clic en los cuadrados</h1>
-    <p>¡Se pondrán negros!</p>
+    <h1>Elige un color y pinta los cubos</h1>
     
-    <div id="grid">
-        <!-- Fila 1 -->
-        <div class="row">
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-        </div>
-        <!-- Fila 2 -->
-        <div class="row">
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-        </div>
-        <!-- Fila 3 -->
-        <div class="row">
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-        </div>
-        <!-- Fila 4 -->
-        <div class="row">
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
-            <div class="cube" onclick="this.className='cube clicked'"></div>
+    <div id="controles">
+        <div>
+            <label for="r">R:</label>
+            <input type="text" id="r" value="0" size="3" maxlength="3">
+            
+            <label for="g">G:</label>
+            <input type="text" id="g" value="0" size="3" maxlength="3">
+            
+            <label for="b">B:</label>
+            <input type="text" id="b" value="255" size="3" maxlength="3">
+            
+            <div id="preview"></div>
         </div>
     </div>
     
-    <p style="margin-top: 30px; font-size: small;">
-        Funciona con toque en móviles antiguos y clic en navegadores viejos.
-    </p>
+    <div id="grid">
+        <!-- 4 filas x 4 cubos -->
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+    </div>
+    
+    <p>Funciona con toque en móviles antiguos y clic en navegadores viejos.</p>
+
+    <script type="text/javascript">
+        // Función para validar y limitar valores entre 0-255
+        function validar(valor) {
+            var n = parseInt(valor);
+            if (isNaN(n)) return 0;
+            if (n < 0) return 0;
+            if (n > 255) return 255;
+            return n;
+        }
+        
+        // Actualiza el color del previsualizador y los campos
+        function actualizarPreview() {
+            var r = validar(document.getElementById('r').value);
+            var g = validar(document.getElementById('g').value);
+            var b = validar(document.getElementById('b').value);
+            
+            // Corrige los valores en los campos
+            document.getElementById('r').value = r;
+            document.getElementById('g').value = g;
+            document.getElementById('b').value = b;
+            
+            // Aplica al cubo previsualizador
+            document.getElementById('preview').style.backgroundColor = 
+                'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        
+        // Pinta el cubo clicado con el color actual
+        function pintar(cubo) {
+            var r = validar(document.getElementById('r').value);
+            var g = validar(document.getElementById('g').value);
+            var b = validar(document.getElementById('b').value);
+            
+            cubo.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        
+        // Actualiza el preview cada vez que se escribe en los campos
+        document.getElementById('r').onkeyup = actualizarPreview;
+        document.getElementById('g').onkeyup = actualizarPreview;
+        document.getElementById('b').onkeyup = actualizarPreview;
+        
+        // Inicializa el preview al cargar la página
+        actualizarPreview();
+    </script>
 </body>
 </html>

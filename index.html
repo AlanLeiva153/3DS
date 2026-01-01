@@ -48,9 +48,9 @@
             z-index: 10;
         }
         #grid {
-            width: 224px;
+            width: 288px;
             height: 224px;
-            margin-left: 40px;
+            margin-left: 6px;
             margin-top: 100;
             border: 2px solid #333;
             background: #fff;
@@ -89,8 +89,12 @@
     </div>
     
     <div id="grid">
-        <!-- 14 filas x 14 cubos -->
+        <!-- 14 filas x 18 cubos -->
         <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -121,18 +125,6 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
-        </div>
-        <div class="row">
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -143,18 +135,6 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-        </div>
-        <div class="row">
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -185,18 +165,6 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
-        </div>
-        <div class="row">
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -207,18 +175,6 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-        </div>
-        <div class="row">
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -249,18 +205,6 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
-        </div>
-        <div class="row">
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
-            <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -281,6 +225,30 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
         </div>
         <div class="row">
             <div class="cube" onclick="pintar(this)"></div>
@@ -297,8 +265,96 @@
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
         </div>
         <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+        </div>
+        <div class="row">
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
+            <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
             <div class="cube" onclick="pintar(this)"></div>
@@ -316,7 +372,7 @@
         </div>
     </div>
     
-    <p align="center">1.0.2</p>
+    <p align="center">1.1.0</p>
 
     <script type="text/javascript">
         // Función para validar y limitar valores entre 0-255
@@ -367,15 +423,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,8 @@ Solo se necesita el navegador por defecto de la consola 3DS. Una vez dentro del 
 
 Elige un color y… ¡a pintar! ^-^
 
-[3DSPlace](https://alanleiva153.github.io/3DS/)
+[3DSPlace \/](https://alanleiva153.github.io/3DS/)
+![Vista de 3DSPlace](preview.jpg)
 
 ## 1.1.0
 + No online :(
